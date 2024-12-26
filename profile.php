@@ -24,12 +24,12 @@ if(isset($_SESSION['USER'])){
 </head>
 
 <body>
-
     <div class="container">
-        <div class="profile_info">
-            <img class="profile_avatar" src="assets/images/<?= $avatar ?>" alt="">
+    <div class="profile_container">
+        <div class="profile_avatar">
+            <img src="assets/images/<?= $avatar ?>" alt="">
         </div>
-        <h1 style="margin-left:41%;"><?= $user_name ?></h1>
+        <h1 style="margin-left:33%;"><?= $user_name ?></h1>
         <div class="profile_socials">
             <a href="#"><i class="uil uil-facebook-f"></i></a>
             <a href="#"><i class="uil uil-instagram-alt"></i></a>
@@ -60,6 +60,7 @@ if(isset($_SESSION['USER'])){
 
 
 
+    </div>
     </div>
     <br><br>
 

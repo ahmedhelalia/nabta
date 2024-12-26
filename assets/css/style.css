@@ -410,6 +410,14 @@ input::placeholder {
 *=====================  User Profile    ====================
 *===========================================================
 */
+.profile_container{
+    padding: 30px;
+    border: 3px solid white;
+    margin-left: 400px;
+    margin-right: 400px;
+    margin-top: 50px;
+    padding-bottom: 100px;
+}
 .profile_socials {
     margin-inline: auto;
     width: fit-content;
@@ -437,19 +445,15 @@ input::placeholder {
 
 .profile_avatar {
     width: 12rem;
+    margin-top: 5rem;
+    margin-left:240px ;
 }
 
 .profile_buttons {
-    margin-right: 35%;
+    margin-right: 38%;
 }
 
-.profile_info {
-    margin-top: 8rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
-}
 
 /**
 *===========================================================
@@ -479,7 +483,8 @@ input::placeholder {
     margin: 10px;
     text-align: right;
     direction: rtl;
-    font-size: 30px;
+    font-size: 20px;
+
 
 
 }
@@ -491,6 +496,7 @@ input::placeholder {
     border: 1px solid rgb(221, 221, 221);
     min-height: 100px;
     display: flex;
+    border-radius: 25px;
 
 }
 
@@ -551,7 +557,9 @@ textarea::placeholder {
     padding: 10px;
     color: rgb(0, 0, 0);
     text-align: center;
-
+    display:flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .class_46 {
@@ -604,11 +612,12 @@ textarea::placeholder {
 
     width: 100px;
     padding: 10px;
-    background-color: rgb(239, 239, 239);
-    color: rgb(0, 0, 0);
+    background-color: #65bebab2;
+    color:white;
     flex: 1 1 1%;
     direction: rtl;
     text-align: right;
+    border-radius: 20px;
 }
 
 .class_47 {
@@ -633,6 +642,7 @@ textarea::placeholder {
     padding: 5px;
     color: rgb(0, 0, 0);
     display: flex;
+    margin-right: 5px;
 
 }
 
@@ -642,8 +652,15 @@ textarea::placeholder {
     cursor: pointer;
 
 }
+.class_53{
 
-.delete_btn {
+	padding: 5px;
+	display: inline-block;
+    color: #335b6f;
+	
+}
+
+.delete_btn a{
 
     padding: 5px;
     display: inline-block;
@@ -652,10 +669,10 @@ textarea::placeholder {
 
 }
 
-.edit_btn {
+.edit_btn a{
     padding: 5px;
     display: inline-block;
-    color: blue;
+    color: #396277;
     cursor: pointer;
 }
 

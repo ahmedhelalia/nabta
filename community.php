@@ -23,45 +23,46 @@
 	</div>
 	<!-- post card template -->
 	<div class="class_42 " style="animation: appear 2.3s ease;">
-		<a href="#" class="class_45">
-			<img src="assets/images/users.png" class="class_47">
-			<h2 class="class_48" style="font-size: 16px;">
-				Jane Name
-			</h2>
-		</a>
+
 		<div class="class_49">
 			<h4 class="class_41">
-				3rd Jan 23 14:35 pm
+				كلام بالعربي للاختبار
 			</h4>
 			<div class="class_15">
 				كبتشتبمنيشتببببببببببببببمنش ببتهختبهخثتهبختهبتشبتبمشنتبكيييييييييييييييييييييييييييبتشمنثتثمنتبثتهخبتخهش
 			</div>
 			<div class="class_51">
+				<a class="class_53" href="#">
+					التعليقات 0
+				</a>
 				<i class="bi bi-chat-left-dots class_52">
 				</i>
-				<div class="js_comment_link class_53" style="color:blue;cursor:pointer;">
-					Comments 0
-				</div>
 			</div>
 			<div class="actionButtons">
-				<div class="edit_btn" style="color:blue;cursor:pointer;">
-					Edit
+				<div class="edit_btn">
+					<a href="">تعديل</a>
 				</div>
 				<div class="delete_btn">
-					Delete
+					<a href="">حذف</a>
 				</div>
 			</div>
 		</div>
+		<a href="#" class="class_45">
+			<img src="assets/images/users.png" class="class_47">
+			<h2 class="class_48" style="font-size: 16px;">
+				User Name
+			</h2>
+		</a>
 	</div>
 	<!-- end post card template -->
 
 	<div class="postControl" style="display: flex; justify-content:space-between;">
 		<button class="class_54">
-			Prev page
+			 الصفحه السابقه
 		</button>
 		<div class="page_number" style="color:white">Page 1</div>
 		<button class="class_39">
-			Next page
+			 الصفحه القادمة
 		</button>
 
 	</div>
