@@ -32,7 +32,7 @@
 				كبتشتبمنيشتببببببببببببببمنش ببتهختبهخثتهبختهبتشبتبمشنتبكيييييييييييييييييييييييييييبتشمنثتثمنتبثتهخبتخهش
 			</div>
 			<div class="class_51">
-				<a class="class_53" href="#">
+				<a class="class_53" href="posts.php">
 					التعليقات 0
 				</a>
 				<i class="bi bi-chat-left-dots class_52">
@@ -55,14 +55,13 @@
 		</a>
 	</div>
 	<!-- end post card template -->
-
 	<div class="postControl" style="display: flex; justify-content:space-between;">
 		<button class="class_54">
-			 الصفحه السابقه
+			الصفحه السابقه
 		</button>
 		<div class="page_number" style="color:white">Page 1</div>
 		<button class="class_39">
-			 الصفحه القادمة
+			الصفحه القادمة
 		</button>
 
 	</div>

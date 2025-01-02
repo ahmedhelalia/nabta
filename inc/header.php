@@ -20,7 +20,7 @@ if(isset($_SESSION['USER'])){
      <!-- ICONSCOUNT CDN -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <!-- BOOTSTRAP ICONS -->
-    <link rel="stylesheet" href="assets/css/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <title>Nabta</title>
 </head>
 

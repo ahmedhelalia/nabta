@@ -410,7 +410,7 @@ input::placeholder {
 *=====================  User Profile    ====================
 *===========================================================
 */
-.profile_container{
+.profile_container {
     padding: 30px;
     border: 3px solid white;
     margin-left: 400px;
@@ -418,6 +418,7 @@ input::placeholder {
     margin-top: 50px;
     padding-bottom: 100px;
 }
+
 .profile_socials {
     margin-inline: auto;
     width: fit-content;
@@ -446,7 +447,7 @@ input::placeholder {
 .profile_avatar {
     width: 12rem;
     margin-top: 5rem;
-    margin-left:240px ;
+    margin-left: 240px;
 }
 
 .profile_buttons {
@@ -472,7 +473,7 @@ input::placeholder {
     color: rgb(0, 0, 0);
     max-width: 800px;
     margin: 65px auto auto;
-    min-height: 700px;
+ 
 
 }
 
@@ -494,9 +495,9 @@ input::placeholder {
     padding: 10px;
     color: rgb(0, 0, 0);
     border: 1px solid rgb(221, 221, 221);
-    min-height: 100px;
     display: flex;
     border-radius: 25px;
+    margin-bottom: 8px;
 
 }
 
@@ -557,7 +558,7 @@ textarea::placeholder {
     padding: 10px;
     color: rgb(0, 0, 0);
     text-align: center;
-    display:flex;
+    display: flex;
     align-items: center;
     flex-direction: column;
 }
@@ -591,7 +592,7 @@ textarea::placeholder {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    border-radius: 8px;
 }
 
 .class_14 {
@@ -613,7 +614,7 @@ textarea::placeholder {
     width: 100px;
     padding: 10px;
     background-color: #65bebab2;
-    color:white;
+    color: white;
     flex: 1 1 1%;
     direction: rtl;
     text-align: right;
@@ -648,19 +649,20 @@ textarea::placeholder {
 
 .class_52 {
 
-    font-size: 25px;
+    font-size: 22px;
     cursor: pointer;
 
 }
-.class_53{
 
-	padding: 5px;
-	display: inline-block;
+.class_53 {
+
+    padding: 5px;
+    display: inline-block;
     color: #335b6f;
-	
+
 }
 
-.delete_btn a{
+.delete_btn a {
 
     padding: 5px;
     display: inline-block;
@@ -669,7 +671,7 @@ textarea::placeholder {
 
 }
 
-.edit_btn a{
+.edit_btn a {
     padding: 5px;
     display: inline-block;
     color: #396277;
@@ -699,7 +701,7 @@ textarea::placeholder {
     margin-top: 10px;
     padding: 4px;
     background-color: #0A7075;
-
+    border-radius: 8px;
 }
 
 .class_39 {
@@ -719,3 +721,23 @@ textarea::placeholder {
     background: white;
     color: #032f30;
 }
+.class_51{
+
+	padding: 5px;
+	display: flex;
+    align-items: center;
+    color: #396277;
+	
+}
+.postComments{
+    padding: 10px;
+    background-color: #0c969c;
+    color: rgb(0, 0, 0);
+    margin: 65px auto auto;
+    
+}
+/**
+*===========================================================
+*===================== End Community =======================
+*===========================================================
+*/
