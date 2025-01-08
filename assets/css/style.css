@@ -294,7 +294,7 @@ footer ul a:hover {
 
 .alert_message.success {
     background: hsl(156, 100%, 38%, 15%);
-    color: #00c476;
+    color: #00dc84;
 }
 
 form {
@@ -473,7 +473,7 @@ input::placeholder {
     color: rgb(0, 0, 0);
     max-width: 800px;
     margin: 65px auto auto;
- 
+    border-radius: 5px;
 
 }
 
@@ -484,7 +484,7 @@ input::placeholder {
     margin: 10px;
     text-align: right;
     direction: rtl;
-    font-size: 20px;
+    font-size: 15px;
 
 
 
@@ -606,6 +606,7 @@ textarea::placeholder {
     padding: 5px;
     text-align: right;
     direction: rtl;
+    font-size: 20px;
 
 }
 
