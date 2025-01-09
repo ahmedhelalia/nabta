@@ -81,7 +81,7 @@ $load_posts = mysqli_query($conn, $load_posts_query);
 						<?= $post['post_content'] ?>
 					</div>
 					<div class="class_51">
-						<a class="class_53" href="post.php">
+						<a class="class_53" href="post.php?id=<?=$post['id']?>">
 							التعليقات 0
 						</a>
 						<i class="bi bi-chat-left-dots class_52">
