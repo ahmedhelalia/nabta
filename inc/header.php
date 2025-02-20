@@ -21,6 +21,7 @@ if(isset($_SESSION['USER'])){
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <!-- BOOTSTRAP ICONS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    
     <title>Nabta</title>
 </head>
 
@@ -30,7 +31,7 @@ if(isset($_SESSION['USER'])){
         <div class="nav_container">
             <a href="index.php" class="nav_logo">Nabta</a>
             <ul class="nav_items">
-                <li><a href="about.php">عنا</a></li>
+                <li><a href="about.html">عنا</a></li>
                 <li class="nav_categories">
                     <div class="sections">
                         الخدمات

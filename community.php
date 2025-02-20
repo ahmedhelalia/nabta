@@ -81,7 +81,7 @@ $load_posts = mysqli_query($conn, $load_posts_query);
 						<?= $post['post_content'] ?>
 					</div>
 					<div class="class_51">
-						<a class="class_53" href="post.php?id=<?=$post['id']?>">
+						<a class="class_53" href="post.php?id=<?=$post['id'] ?>">
 							التعليقات 0
 						</a>
 						<i class="bi bi-chat-left-dots class_52">
@@ -94,14 +94,15 @@ $load_posts = mysqli_query($conn, $load_posts_query);
 						<div>
 							<p></p>
 						</div>
-					<!-- check if user owns the post then show action buttons !-->
+						<!-- check if user owns the post then show action buttons !-->
 					<?php elseif ($current_user_id === $post['user_id']): ?>
 						<div class="actionButtons">
 							<div class="edit_btn">
-								<a href="post_edit.php?id=<?=$post['id']?>">تعديل</a>
+								<a href="post_edit.php?id=<?=$post['id'] ?>">تعديل</a>
 							</div>
 							<div class="delete_btn">
-								<a href="post_delete.php?id=<?=$post['id']?>">حذف</a>
+								<p></p>
+								<a href="post_delete.php?id=<?=$post['id'] ?>">حذف</a>
 							</div>
 						</div>
 					<?php endif; ?>

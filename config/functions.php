@@ -8,7 +8,7 @@ function show($stuff){
     echo "</pre>";
 }
 /**
- * data base Connection
+ * database Connection
 */
 define('DB_USER','root');
 define('DB_HOST','localhost');
