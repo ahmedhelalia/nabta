@@ -1,5 +1,7 @@
+
+<?php include 'inc/header.php' ?>
 <?php
-require 'config/init.php';
+//require 'config/init.php';
 // check if user logged in from session
 if(isset($_SESSION['USER'])){
     $id = $_SESSION['USER']['user_id'];
@@ -11,58 +13,32 @@ if(isset($_SESSION['USER'])){
     $user_name = $info['first_name']." ".$info['last_name'];
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?= ROOT ?>/assets/css/style.css">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-
-    <title>Profile</title>
-</head>
-
-<body>
-    <div class="container">
+<div class="container" style="margin-top: 200px;">
     <div class="profile_container">
+        <!-- Avatar -->
         <div class="profile_avatar">
-            <img src="assets/images/<?= $avatar ?>" alt="">
+            <img src="assets/images/<?= $avatar ?>" alt="<?= $user_name ?>">
         </div>
-        <h1 style="margin-left:33%;"><?= $user_name ?></h1>
+        
+        <!-- User Name -->
+        <h1><?= $user_name ?></h1>
+        
+        <!-- Social Links -->
         <div class="profile_socials">
-            <a href="#"><i class="uil uil-facebook-f"></i></a>
-            <a href="#"><i class="uil uil-instagram-alt"></i></a>
-            <a href="#"><i class="uil uil-twitter"></i></a>
+            <a href="#" aria-label="Facebook"><i class="uil uil-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="uil uil-instagram-alt"></i></a>
+            <a href="#" aria-label="Twitter"><i class="uil uil-twitter"></i></a>
         </div>
-
+        
+        <!-- Action Buttons -->
         <div class="profile_buttons">
-            <a href="profileSettings.php">
-                <button class="btn">
-                    التعديل
-                </button>
-            </a>
-            <a href="logout.php">
-            <button class="btn">
-                 تسجيل الخروج 
-            </button>
-            </a>
-            <a href="index.php">
-            <button class="btn">
-                الصفحة الرئيسية
-            </button>
-            </a>
+            <a href="profileSettings.php" class="btn">التعديل</a>
+            <a href="logout.php" class="btn">تسجيل الخروج</a>
+            <a href="index.php" class="btn">الصفحة الرئيسية</a>
         </div>
-
-
     </div>
-
-
-
-
-    </div>
-    </div>
-    <br><br>
+</div>
 
 </body>
 
