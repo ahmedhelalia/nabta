@@ -32,17 +32,9 @@ if (isset($_SESSION['USER'])) {
             <a href="index.php" class="nav_logo">Nabta</a>
             <ul class="nav_items">
                 <li><a href="about.html">عنا</a></li>
-                <li class="nav_categories">
-                    <div class="sections">
-                        الخدمات
-                    </div>
-                    <ul>
-                        <li><a href="beforeMarriage.php">ما قبل الزواج</a></li>
-                        <li><a href="afterMarriage.php">ما بعد الزواج</a></li>
-                        <li><a href="childhood.php">مرحلة الطفولة</a></li>
-                        <li><a href="teenage.php">مرحلة المراهقة</a></li>
-                    </ul>
-                </li>
+                <li><a href="">البرامج والدورات</a></li>
+                <li><a href="articles.php">مقالات متنوعة</a></li>
+
                 <li><a href="community.php">المنتدى</a></li>
 
                 <li><a href="index.php">الرئيسية</a></li>
@@ -115,10 +107,10 @@ if (isset($_SESSION['USER'])) {
             <article>
                 <h4>خدمات</h4>
                 <ul>
-                    <li><a href="beforeMarriage.php">ما قبل الزواج</a></li>
-                    <li><a href="afterMarriage.php">ما بعد الزواج</a></li>
-                    <li><a href="childhood.php">مرحلة الطفولة</a></li>
-                    <li><a href="teenage.php">مرحلة المراهقة</a></li>
+                    <li><a href="#">استشارات زوجية</a></li>
+                    <li><a href="articles.php">  مقالات ودروس تعليمية</a></li>
+                    <li><a href="community.php">منتدى النقاش </a></li>
+                    <li><a href="courses.php">دورات تدريبية</a></li>
                 </ul>
             </article>
             <article>
@@ -136,7 +128,6 @@ if (isset($_SESSION['USER'])) {
                     <li><a href="index.php">الرئيسية</a></li>
                     <li><a href="community.php">المنتدى</a></li>
                     <li><a href="about.php">عنا</a></li>
-                    <li><a href="">الخدمات</a></li>
                     <li><a href="contact.php">تواصل معنا</a></li>
                 </ul>
             </article>

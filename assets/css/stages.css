@@ -224,7 +224,7 @@ body {
 /* Content Grid (Cards) */
 .content-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 2rem;
     margin: 2rem 0;
 }
@@ -492,6 +492,58 @@ body {
     max-width: 1200px;
     border: none;
     border-radius: 3px;
+}
+/* Profiles Section */
+.profiles {
+    margin: 3rem 0;
+}
+
+.list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    list-style: none;
+}
+
+.list-item {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.list-item:hover {
+    transform: translateY(-5px);
+}
+
+.list-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 1.5rem;
+    border: 3px solid var(--secondary-color);
+}
+
+.list-item .text {
+    flex: 1;
+}
+
+.list-item span {
+    display: block;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.list-item small {
+    color: var(--dark-color);
+    font-size: 0.9rem;
+    opacity: 0.8;
 }
 
 /* Responsive Design */

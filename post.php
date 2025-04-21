@@ -114,6 +114,7 @@ if ($result) {
     <?php
     $comment_query = "SELECT * FROM `comments`  INNER JOIN `users`
     WHERE `comments`.`post_id` = '$post_id' && `comments`.`user_id` = `users`.`id`
+    ORDER BY created_at desc
      ";
     $load_comments = mysqli_query($conn, $comment_query);
     ?>

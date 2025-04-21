@@ -21,8 +21,8 @@ if (isset($_SESSION['USER'])) {
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <!-- BOOTSTRAP ICONS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <!-- JS Styles-->
-    <link rel="stylesheet" href="assets/js/main.js">
+    <!-- FONT-AWESOME ICONS !-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Nabta</title>
 </head>
 
@@ -33,7 +33,8 @@ if (isset($_SESSION['USER'])) {
             <a href="index.php" class="nav_logo">Nabta</a>
             <ul class="nav_items">
                 <li><a href="about.html">عنا</a></li>
-                <li class="nav_categories">
+                <li><a href="courses.php">البرامج والدورات</a></li>
+                <!-- <li class="nav_categories">
                     <div class="sections">
                         الخدمات
                     </div>
@@ -42,7 +43,8 @@ if (isset($_SESSION['USER'])) {
                         <li><a href="stage2.html"> فترة ما بعد الزواج</a></li>
                         <li><a href="stage3.html">فترة ما  بعد الطفولة</a></li>
                     </ul>
-                </li>
+                </li> -->
+                <li><a href="articles.php">مقالات متنوعة</a></li>
                 <li><a href="community.php">المنتدى</a></li>
 
                 <li><a href="index.php">الرئيسية</a></li>
@@ -53,6 +55,7 @@ if (isset($_SESSION['USER'])) {
                         </div>
                         <ul>
                             <li><a href="profile.php">الاعدادات</a></li>
+                            <li><a href="dashboard.php" style="white-space: nowrap;">لوحة التحكم </a></li>
                             <li><a href="logout.php">الخروج</a></li>
                         </ul>
                     </li>

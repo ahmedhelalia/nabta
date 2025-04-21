@@ -1,4 +1,3 @@
-
 <?php include 'inc/header.php' ?>
 <?php
 //require 'config/init.php';

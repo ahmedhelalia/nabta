@@ -3,9 +3,8 @@ require 'inc/header.php';
 if (isset($_SESSION['USER']['user_id'])) {
 	$current_user_id = $_SESSION['USER']['user_id'];
 }
-$load_posts_query  = "SELECT * FROM `users` INNER JOIN `posts` WHERE `users`.`id` = `posts`.`user_id`;";
-$load_posts = mysqli_query($conn, $load_posts_query);
-
+$load_posts_query  = "SELECT * FROM `users` INNER JOIN `posts` WHERE `users`.`id` = `posts`.`user_id` ORDER BY created_at desc;";
+$load_posts = mysqli_query($conn, $load_posts_query);	
 ?>
 
 <div class="class_11">
@@ -61,6 +60,7 @@ $load_posts = mysqli_query($conn, $load_posts_query);
 	if (mysqli_num_rows($load_posts) > 0):
 	?>
 		<?php while ($post = mysqli_fetch_assoc($load_posts)): ?>
+			
 			<div class="class_42 " style="animation: appear 2.3s ease;">
 				<div class="class_49">
 					<h4 class="class_41">
@@ -81,8 +81,14 @@ $load_posts = mysqli_query($conn, $load_posts_query);
 						<?= $post['post_content'] ?>
 					</div>
 					<div class="class_51">
-						<a class="class_53" href="post.php?id=<?=$post['id'] ?>">
-							التعليقات 0
+					    <?php
+						// trying to load comment count foreach post but i got bored
+						// $comments_count_query = "SELECT COUNT(comment_id) AS comment_count FROM `comments` INNER JOIN `posts` WHERE comments.post_id = posts.id";
+						// $count_result = mysqli_query($conn,$comments_count_query);
+						// $comments_count = mysqli_fetch_assoc($count_result)	; 
+						?>
+						<a class="class_53" href="post.php?id=<?= $post['id'] ?>">
+							التعليقات
 						</a>
 						<i class="bi bi-chat-left-dots class_52">
 						</i>
@@ -98,11 +104,11 @@ $load_posts = mysqli_query($conn, $load_posts_query);
 					<?php elseif ($current_user_id === $post['user_id']): ?>
 						<div class="actionButtons">
 							<div class="edit_btn">
-								<a href="post_edit.php?id=<?=$post['id'] ?>">تعديل</a>
+								<a href="post_edit.php?id=<?= $post['id'] ?>">تعديل</a>
 							</div>
 							<div class="delete_btn">
 								<p></p>
-								<a href="post_delete.php?id=<?=$post['id'] ?>">حذف</a>
+								<a href="post_delete.php?id=<?= $post['id'] ?>">حذف</a>
 							</div>
 						</div>
 					<?php endif; ?>

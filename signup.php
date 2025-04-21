@@ -57,7 +57,7 @@ unset($_SESSION['signup_data']);
             </select>
             <div class="form_control">
                 <label for="avatar" class="form_pp">صورة الملف الشخصى</label>
-                <input type="file" name="avatar" id="avatar">
+                <input type="file" name="avatar" id="avatar" style="direction: rtl;">
             </div>
             <button type="submit" name="submit" class="btn"> تسجيل</button>
             <div class="end_form">

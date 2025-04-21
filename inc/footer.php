@@ -9,10 +9,10 @@
         <article>
             <h4>خدمات</h4>
             <ul>
-                <li><a href="beforeMarriage.php">ما قبل الزواج</a></li>
-                <li><a href="afterMarriage.php">ما بعد الزواج</a></li>
-                <li><a href="childhood.php">مرحلة الطفولة</a></li>
-                <li><a href="teenage.php">مرحلة المراهقة</a></li>
+                <li><a href="#">استشارات زوجية</a></li>
+                <li><a href="articles.php"> مقالات ودروس تعليمية</a></li>
+                <li><a href="community.php">منتدى النقاش </a></li>
+                <li><a href="courses.php">دورات تدريبية</a></li>
             </ul>
         </article>
         <article>
@@ -30,7 +30,7 @@
                 <li><a href="index.php">الرئيسية</a></li>
                 <li><a href="community.php">المنتدى</a></li>
                 <li><a href="about.php">عنا</a></li>
-                <li><a href="">الخدمات</a></li>
+                <li><a href="#services">الخدمات</a></li>
                 <li><a href="contact.php">تواصل معنا</a></li>
             </ul>
         </article>
@@ -39,6 +39,7 @@
         <small>Copyright &copy; Nabta 2025 All Rights Reserved</small>
     </div>
 </footer>
+<script src="assets/js/main.js"></script>
 </body>
 
 </html>
