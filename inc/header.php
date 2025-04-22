@@ -8,6 +8,7 @@ if (isset($_SESSION['USER'])) {
     $result = mysqli_query($conn, $query);
     $user_data = mysqli_fetch_assoc($result);
     $user_avatar = $user_data['user_avatar'];
+    $user_expert = $user_data['user_role'];
     $isAdmin = $user_data['isAdmin'];
 }
 ?>
@@ -57,7 +58,7 @@ if (isset($_SESSION['USER'])) {
                         </div>
                         <ul>
                             <li><a href="profile.php">الاعدادات</a></li>
-                            <?php if ($isAdmin): ?>
+                            <?php if ($isAdmin || $user_expert === 'expert'): ?>
                                 <li><a href="dashboard.php" style="white-space: nowrap;">لوحة التحكم </a></li>
                             <?php endif; ?>
                             <li><a href="logout.php">الخروج</a></li>

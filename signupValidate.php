@@ -43,9 +43,9 @@ if(isset($_POST['submit'])){
             // make sure the file is an image
             $allowedFiles = ['png','jpg','jpeg'];
             $extension = explode('.',$avatar_name);
-            show($extension);
+            //show($extension);
             $extension = end($extension);
-            show($extension);
+            //show($extension);
             // Check if in Allowed files
             if (in_array($extension,$allowedFiles)){
                 // make Sure image is not too large

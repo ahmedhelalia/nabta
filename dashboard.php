@@ -1,6 +1,7 @@
 <?php
 include 'inc/header.php';
-if (!$isAdmin) {
+$expert = $user_expert ? 'expert' : '';
+if (!$isAdmin && !$expert) {
     header('location:' . ROOT . '/index.php');
 }
 $sql = "SELECT * FROM `articles` INNER JOIN `categories` on articles.category = categories.category_id";
@@ -27,7 +28,7 @@ $articles = mysqli_query($conn, $sql);
                     </a>
                 </li>
                 <li>
-                    <a href="add-user.html">
+                    <a href="#">
                         <i class="uil uil-list-ul"> </i>
 
                         <h5>اضافة برنامج او دورة</h5>
@@ -40,12 +41,14 @@ $articles = mysqli_query($conn, $sql);
                         <h5> ادارة البرامج</h5>
                     </a>
                 </li>
+                <?php if($isAdmin): ?>
                 <li>
                     <a href="manage-users.php">
                         <i class="uil uil-user-plus"> </i>
                         <h5> ادارة المستخدمين</h5>
                     </a>
                 </li>
+                <?php endif; ?>
 
             </ul>
 
