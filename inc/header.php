@@ -4,9 +4,11 @@ require 'config/init.php';
 if (isset($_SESSION['USER'])) {
     $id = $_SESSION['USER']['user_id'];
     // get current user avatar_name from data base
-    $query = "SELECT `user_avatar` FROM `users` WHERE `id` = '$id'";
+    $query = "SELECT * FROM `users` WHERE `id` = '$id'";
     $result = mysqli_query($conn, $query);
-    $user_avatar = mysqli_fetch_assoc($result);
+    $user_data = mysqli_fetch_assoc($result);
+    $user_avatar = $user_data['user_avatar'];
+    $isAdmin = $user_data['isAdmin'];
 }
 ?>
 <!DOCTYPE html>
@@ -51,11 +53,13 @@ if (isset($_SESSION['USER'])) {
                 <?php if (isset($_SESSION['USER'])): ?>
                     <li style="margin-right: 40px;" class="nav_profile">
                         <div class="avatar">
-                            <img src="<?= ROOT ?>/assets/images/<?= $user_avatar['user_avatar'] ?>" alt="broken">
+                            <img src="<?= ROOT ?>/assets/images/<?= $user_avatar ?>" alt="broken">
                         </div>
                         <ul>
                             <li><a href="profile.php">الاعدادات</a></li>
-                            <li><a href="dashboard.php" style="white-space: nowrap;">لوحة التحكم </a></li>
+                            <?php if ($isAdmin): ?>
+                                <li><a href="dashboard.php" style="white-space: nowrap;">لوحة التحكم </a></li>
+                            <?php endif; ?>
                             <li><a href="logout.php">الخروج</a></li>
                         </ul>
                     </li>

@@ -3,11 +3,10 @@ include 'inc/header.php';
 if (!$isAdmin) {
     header('location:' . ROOT . '/index.php');
 }
-$sql = "SELECT * FROM `articles` INNER JOIN `categories` on articles.category = categories.category_id";
-$articles = mysqli_query($conn, $sql);
+$users_query = "SELECT * FROM `users` LIMIT 8";
+$users_query_result = mysqli_query($conn, $users_query);
 
 ?>
-
 <section class="dashboard">
     <div class="mainDash-container dashboard__container">
         <button id="show__sidebar-btn" class="sidebar__toggle"><i class="uil uil-angle-right-b"></i></button>
@@ -21,7 +20,7 @@ $articles = mysqli_query($conn, $sql);
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="active">
+                    <a href="dashboard.php">
                         <i class="uil uil-postcard"></i>
                         <h5>ادارة المقالات </h5>
                     </a>
@@ -41,7 +40,7 @@ $articles = mysqli_query($conn, $sql);
                     </a>
                 </li>
                 <li>
-                    <a href="manage-users.php">
+                    <a href="#" class="active">
                         <i class="uil uil-user-plus"> </i>
                         <h5> ادارة المستخدمين</h5>
                     </a>
@@ -51,14 +50,25 @@ $articles = mysqli_query($conn, $sql);
 
         </aside>
         <main style="direction: rtl;">
-            <h2>ادارة المقالات</h2>
+            <h2>ادارة المستخدمين</h2>
             <?php
-            if (isset($_SESSION['article_deleted'])):
+            if (isset($_SESSION['user_deleted'])):
             ?>
                 <div class="alert_message success">
                     <p><?php
-                        echo $_SESSION['article_deleted'];
-                        unset($_SESSION['article_deleted'])
+                        echo $_SESSION['user_deleted'];
+                        unset($_SESSION['user_deleted'])
+                        ?>
+                    </p>
+                </div>
+            <?php endif; ?>
+            <?php
+            if (isset($_SESSION['delete_user_error'])):
+            ?>
+                <div class="alert_message error">
+                    <p><?php
+                        echo $_SESSION['delete_user_error'];
+                        unset($_SESSION['delete_user_error']);
                         ?>
                     </p>
                 </div>
@@ -66,19 +76,21 @@ $articles = mysqli_query($conn, $sql);
             <table>
                 <thead>
                     <tr>
-                        <th>العنوان</th>
-                        <th>الفئة</th>
+                        <th>الحساب الالكتروني</th>
+                        <th>اسم المستخدم</th>
+                        <th>دور المستخدم</th>
                         <th>تعديل </th>
                         <th>حذف</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php while ($article = mysqli_fetch_assoc($articles)): ?>
+                    <?php while ($user = mysqli_fetch_assoc($users_query_result)): ?>
                         <tr>
-                            <td><?= $article['title'] ?></td>
-                            <td><?= $article['category_name'] ?></td>
+                            <td><?= $user['email'] ?></td>
+                            <td><?= $user['first_name'] . ' ' . $user['last_name'] ?></td>
+                            <td><?= $user['user_role']  ?></td>
                             <td><a href="#" class="dashboard-btn sm">تعديل </a></td>
-                            <td><a href="delete-article.php?id=<?= $article['article_id'] ?>" class="dashboard-btn danger">حذف</a></td>
+                            <td><a href="delete-user.php?id=<?= $user['id'] ?>" class="dashboard-btn danger">حذف</a></td>
                         </tr>
                     <?php endwhile; ?>
 
