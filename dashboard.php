@@ -54,7 +54,7 @@ $articles = mysqli_query($conn, $sql);
 
         </aside>
         <main style="direction: rtl;">
-            <h2>ادارة المقالات</h2>
+            <h2 class="dashboard-main-title">ادارة المقالات</h2>
             <?php
             if (isset($_SESSION['article_deleted'])):
             ?>

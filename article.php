@@ -10,23 +10,25 @@ if (isset($_GET['id'])) {
 }
 ?>
 <section class="singlepost">
-    <div class="single-container singlepost__container">
+    <div class="singlepost__container">
         <h2><?= $article['title'] ?></h2>
-        <div class="post__author-info" style="margin-top:20px">
-            <small>Sep 31,2024 11:31 PM</small>
-            <h5> كتابة: <?= $article['first_name'] . $article['last_name'] ?> </h5>
+        <div class="post__author-info">
             <div class="post__author-avatar">
-            <!-- <img src="assets/images/<?= $article['user_avatar'] ?>"> -->
+                <img src="<?= ROOT ?>/assets/images/<?= $article['user_avatar'] ?>" alt="Author Avatar">
+            </div>
+            <div class="author-details">
+                <h5>كتابة: <?= $article['first_name'] . ' ' . $article['last_name'] ?></h5>
+                <small><?= date('M d, Y', strtotime($article['published_at'])) ?></small>
+            </div>
         </div>
-        </div>
-        
 
         <div class="singlepost__thumbnail">
-            <img src="assets/images/<?= $article['thumbnail'] ?>">
+            <img src="<?= ROOT ?>/assets/images/<?= $article['thumbnail'] ?>" alt="<?= $article['title'] ?>">
         </div>
-        <p>
-            <?= $article['article'] ?>
-        </p>
+
+        <div class="article-content">
+            <p><?= nl2br($article['article']) ?></p>
+        </div>
     </div>
 </section>
 <?php include 'inc/footer.php' ?>

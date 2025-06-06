@@ -81,17 +81,10 @@ $load_posts = mysqli_query($conn, $load_posts_query);
 						<?= $post['post_content'] ?>
 					</div>
 					<div class="class_51">
-					    <?php
-						// trying to load comment count foreach post but i got bored
-						// $comments_count_query = "SELECT COUNT(comment_id) AS comment_count FROM `comments` INNER JOIN `posts` WHERE comments.post_id = posts.id";
-						// $count_result = mysqli_query($conn,$comments_count_query);
-						// $comments_count = mysqli_fetch_assoc($count_result)	; 
-						?>
-						<a class="class_53" href="post.php?id=<?= $post['id'] ?>">
-							التعليقات
-						</a>
-						<i class="bi bi-chat-left-dots class_52">
-						</i>
+						<a href="post.php?id=<?= $post['id'] ?>" class="action-btn">
+                            التعليقات
+							 <i class="bi bi-chat-left-dots"></i>
+                        </a>	
 					</div>
 					<?php
 					// if there is no logged in user then show nothing
@@ -142,8 +135,3 @@ $load_posts = mysqli_query($conn, $load_posts_query);
 <br><br>
 
 </section>
-
-</body>
-
-
-</html>

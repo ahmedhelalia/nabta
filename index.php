@@ -46,7 +46,7 @@
     <h2 class="section-title-home">مراحل نمو وتطور الأسرة</h2>
     <div class="stages-container">
         <div class="stage-card">
-            <img src="images/pre-marriage.jpg" alt="مرحلة ما قبل الزواج">
+            <img src="courses_images/1 (1).jpg" alt="مرحلة ما قبل الزواج">
             <div class="stage-content">
                 <h3>مرحلة ما قبل الزواج</h3>
                 <p>"هي فترة التعارف والتخطيط للحياة الزوجية"</p>
@@ -55,7 +55,7 @@
         </div>
 
         <div class="stage-card">
-            <img src="images/post-marriage.jpg" alt="مرحلة ما بعد الزواج">
+            <img src="courses_images/1 (2).jpg" alt="مرحلة ما بعد الزواج">
             <div class="stage-content">
                 <h3>مرحلة ما بعد الزواج</h3>
                 <p>"هي فترة التكيف والنمو المشترك"</p>
@@ -64,7 +64,7 @@
         </div>
 
         <div class="stage-card">
-            <img src="images/post-childhood.jpg" alt="مرحلة ما بعد الطفولة">
+            <img src="courses_images/1 (1).jpeg" alt="مرحلة ما بعد الطفولة">
             <div class="stage-content">
                 <h3>مرحلة ما بعد الطفولة</h3>
                 <p>"تشمل فترة المراهقة والشباب"</p>
@@ -129,4 +129,23 @@
         </div>
     </div>
 </section>
+<div class="chat-widget">
+    <div class="chat-button">
+        <i class="fas fa-comments"></i>
+    </div>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h3>نبتة - المساعد الآلي</h3>
+        </div>
+        <div class="chat-messages">
+            <div class="message bot-message">
+                مرحباً بك! كيف يمكنني مساعدتك اليوم؟
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" placeholder="اكتب رسالتك هنا...">
+            <button>إرسال</button>
+        </div>
+    </div>
+</div>
 <?php include 'inc/footer.php' ?>

@@ -33,20 +33,16 @@ if (isset($_SESSION['USER'])) {
     <!-- Start Of Nav Bar -->
     <nav>
         <div class="nav_container">
-            <a href="index.php" class="nav_logo">Nabta</a>
+            <a href="index.php" class="nav_logo">
+                 <img src="<?= ROOT ?>/assets/images/nabta-logo.png" alt="Nabta Logo">
+            </a>
+            <button class="mobile-nav-toggle" aria-controls="nav_items" aria-expanded="false">
+                <i class="uil uil-bars"></i>
+                <span class="visually-hidden">القائمة</span>
+            </button>
             <ul class="nav_items">
-                <li><a href="about.html">عنا</a></li>
+                <li><a href="contact.php">تواصل معنا</a></li>
                 <li><a href="courses.php">البرامج والدورات</a></li>
-                <!-- <li class="nav_categories">
-                    <div class="sections">
-                        الخدمات
-                    </div>
-                    <ul>
-                        <li><a href="stage1.html">فترة ما قبل الزواج</a></li>
-                        <li><a href="stage2.html"> فترة ما بعد الزواج</a></li>
-                        <li><a href="stage3.html">فترة ما  بعد الطفولة</a></li>
-                    </ul>
-                </li> -->
                 <li><a href="articles.php">مقالات متنوعة</a></li>
                 <li><a href="community.php">المنتدى</a></li>
 

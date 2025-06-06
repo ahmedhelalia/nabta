@@ -50,7 +50,7 @@ $users_query_result = mysqli_query($conn, $users_query);
 
         </aside>
         <main style="direction: rtl;">
-            <h2>ادارة المستخدمين</h2>
+            <h2 class="dashboard-main-title">ادارة المستخدمين</h2>
             <?php
             if (isset($_SESSION['user_deleted'])):
             ?>
@@ -80,6 +80,7 @@ $users_query_result = mysqli_query($conn, $users_query);
                         <th>اسم المستخدم</th>
                         <th>دور المستخدم</th>
                         <th>تعديل </th>
+                        <th>حظر</th>
                         <th>حذف</th>
                     </tr>
                 </thead>
@@ -90,6 +91,7 @@ $users_query_result = mysqli_query($conn, $users_query);
                             <td><?= $user['first_name'] . ' ' . $user['last_name'] ?></td>
                             <td><?= $user['user_role']  ?></td>
                             <td><a href="#" class="dashboard-btn sm">تعديل </a></td>
+                            <td><a href="#" class="dashboard-btn warning">حظر </a></td>
                             <td><a href="delete-user.php?id=<?= $user['id'] ?>" class="dashboard-btn danger">حذف</a></td>
                         </tr>
                     <?php endwhile; ?>

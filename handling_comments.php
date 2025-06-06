@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $result = mysqli_query($conn, $comment_query);
         if ($result) {
             $_SESSION['comment_success'] = "تم كتبابة تعليقك بنجاح";
-            show($post_id);
+            //show($post_id);
             header("location:" . ROOT . "/post.php?id=" . $post_id);
         } else {
             echo "Something went wrong";
