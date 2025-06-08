@@ -48,6 +48,11 @@ $articles = mysqli_query($conn, $sql);
                             <h5>إدارة الاستشارات</h5>
                         </a>
                     </li>
+                      <li>
+                        <a href="expert-prices.php" ><i class="fas fa-comments"></i>
+                            <h5>إدارة اسعار الاستشارات</h5>
+                        </a>
+                    </li>
                     <li>
                         <a href="expert-profile.php"><i class="fas fa-user-md"></i>
                             <h5>الملف الشخصي</h5>

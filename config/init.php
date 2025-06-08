@@ -3,7 +3,7 @@ session_start();
 /** 
  * Constants 
 */
-define('ROOT','http://localhost/nabta');
+define('ROOT','http://192.168.1.5/nabta');
 include 'functions.php';
 /**
  * timezone configs

@@ -2,11 +2,14 @@
 /**
  * print readable data
 */
-function show($stuff){
+function show($stuff, $exit = true) {
     echo "<pre>";
     print_r($stuff);
     echo "</pre>";
-    die();
+    if ($exit) {
+        exit;
+    }
+    
 }
 /**
  * database Connection

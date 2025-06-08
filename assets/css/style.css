@@ -2126,12 +2126,6 @@ textarea::placeholder {
 ================== start dashboard =========================
 ============================================================
 */
-.mainDash-container {
-    width: 80%;
-    max-width: 1800px;
-    margin-inline: auto;
-}
-
 .dashboard {
     margin-top: 3rem;
     direction: rtl;
@@ -2145,6 +2139,7 @@ textarea::placeholder {
     padding: 2rem;
     max-width: 1400px;
     margin: 0 auto;
+    width: 80%; 
 }
 
 /* Sidebar Styles */
@@ -2232,6 +2227,7 @@ textarea::placeholder {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: right;
 }
 
 .dashboard table th {
@@ -2956,6 +2952,51 @@ textarea::placeholder {
     color: #0c8589;
 }
 
+.expert-pricing {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+/** Pricing Consultation Cards */
+.price-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.price-card {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.price-card h4 {
+    color: #032f30;
+    margin-bottom: 1rem;
+}
+
+.price {
+    font-size: 1.5rem;
+    color: #032f30;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.duration {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.price-display {
+    background: #f8f9fa;
+    color: #032f30;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
 /* ======================================================= */
 /* ==================== END Consultations ================ */
 /* ======================================================= */
@@ -2987,34 +3028,156 @@ textarea::placeholder {
     font-weight: 700;
 }
 
-.status-badge {
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
+.consultation-details {
+    max-width: 600px;
+
+    padding: 20px;
+    direction: rtl;
+    color: #333;
+}
+
+.consultation-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.user-info,
+.consultation-info,
+.consultation-message {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.user-info h3,
+.consultation-info h3,
+.consultation-message h3 {
+    color: var(--text-color);
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.user-info p,
+.consultation-info p {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+.user-info strong,
+.consultation-info strong {
+    color: #2c3e50;
     font-weight: 600;
+    margin-left: 10px;
 }
 
-.status-badge.pending {
-    background: rgba(255, 193, 7, 0.2);
-    color: #ffc107;
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
 }
 
-.status-badge.in-progress {
-    background: rgba(13, 110, 253, 0.2);
-    color: #0d6efd;
+.status-badge.payment_pending {
+    background-color: #fff3cd;
+    color: #856404;
 }
 
-.status-badge.completed {
-    background: rgba(25, 135, 84, 0.2);
-    color: #198754;
+.status-badge.payment_cancelled {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.status-badge.payment_paid {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+/* Add to your CSS file */
+.status {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status.pending {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.status.approved {
+    background-color: #cce5ff;
+    color: #004085;
+}
+
+.status.completed {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status.cancelled {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.consultation-message .message-content {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+.consultation-actions {
+    margin-top: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 16px;
+    color: #333;
+}
+
+
+.back-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-link a {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.fa-arrow-right {
+    transform: rotate(180deg);
 }
 
 .consultations-table {
-    background: var(--accent-color);
-    padding: 1.5rem;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
     overflow-x: auto;
+    margin-top: 2rem;
 }
 
 /* ======================================================= */
@@ -3052,20 +3215,22 @@ textarea::placeholder {
         position: fixed;
         left: 6%;
     }
-  
+
 
     /* Keep nav_profile visible and move it between logo and burger */
     .nav_profile {
         order: 2;
         position: relative;
         margin-left: 77%;
-        
+
     }
-    .nav-responsive-li{
-       
+
+    .nav-responsive-li {
+
         position: relative;
         margin-left: 50%;
     }
+
     .nav_items {
         position: fixed;
         top: 4.5rem;
@@ -3090,11 +3255,12 @@ textarea::placeholder {
         width: 100%;
         text-align: center;
     }
+
     /* Profile dropdown adjustments */
     .nav_profile ul {
         position: absolute;
         top: 100%;
-        right:0;
+        right: 0;
         width: 200px;
         background: var(--accent-color);
         border-radius: 10px;
@@ -3849,5 +4015,25 @@ textarea::placeholder {
     .submit-btn {
         padding: 0.8rem 1.5rem;
         font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .consultation-details {
+        padding: 15px;
+    }
+
+    .dashboard-main-title {
+        font-size: 24px;
+    }
+
+    .consultation-card {
+        padding: 15px;
+    }
+}
+
+@media (max-width:768px) {
+    .price-inputs input {
+        margin: 5px;
     }
 }
