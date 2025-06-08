@@ -53,7 +53,7 @@ if (isset($_GET['search']) && isset($_GET['submit'])) {
         </div>
     </section>
 <?php else: ?>
-    <div class="alert_message error lg section_extra-margin">
+    <div class="empty__search">      
         <p>لا يوجد نتائج لهذا البحث</p>
     </div>
 <?php endif; ?>

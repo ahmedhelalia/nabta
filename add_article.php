@@ -1,5 +1,4 @@
-<?php include
-    'inc/header.php';
+<?php include 'inc/header.php';
 $categories_query = "SELECT * FROM `categories`";
 $categories = mysqli_query($conn, $categories_query);
 // get back form data if form was invalid
@@ -27,20 +26,20 @@ unset($_SESSION['add_article_data']);
                         <h5>ادارة المقالات </h5>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
-                        <i class="uil uil-list-ul"> </i>
+                <?php if ($user_expert === 'expert'): ?>
 
-                        <h5>اضافة برنامج او دورة</h5>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <i class="uil uil-list-ul"> </i>
-                        <h5> ادارة البرامج</h5>
-                    </a>
-                </li>
+                    <li>
+                        <a href="expert-consultations.php"><i class="fas fa-comments"></i>
+                            <h5>إدارة الاستشارات</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="expert-profile.php"><i class="fas fa-user-md"></i>
+                            <h5>الملف الشخصي</h5>
+                        </a>
+                    </li>
+                <?php endif; ?>
+            
                 <?php if ($isAdmin): ?>
                     <li>
                         <a href="manage-users.php">
@@ -52,7 +51,7 @@ unset($_SESSION['add_article_data']);
             </ul>
         </aside>
         <div class="dashboard_form_container" style="direction: rtl;">
-            <h2 style="direction: rtl; margin-top:50px">اضافة مقال</h2>
+            <h2 class="dashboard-main-title">اضافة مقال</h2>
             <?php if (isset($_SESSION['add_article'])): ?>
                 <div class="alert_message error">
                     <p>
@@ -78,7 +77,7 @@ unset($_SESSION['add_article_data']);
                     <input type="file" name="article_thumbnail" id="thumbnail">
                 </div>
 
-                <button type="submit" name="submit" class="btn">اضافة</button>
+                <button type="submit" name="submit" class="dashboard-btn">اضافة</button>
 
             </form>
         </div>

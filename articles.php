@@ -11,8 +11,9 @@ $articles = mysqli_query($conn, $sql);
         <div class="search-items">
             <input type="search" name="search" placeholder="ابحث عن مقال...">
             <i class="uil uil-search"></i>
-        </div>
+            
         <button type="submit" name="submit" class="search-btn">بحث</button>
+        </div>
     </form>
 </section>
 <!-- End Search Bar  -->

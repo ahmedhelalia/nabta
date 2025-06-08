@@ -4,7 +4,21 @@ $expert = $user_expert ? 'expert' : '';
 if (!$isAdmin && !$expert) {
     header('location:' . ROOT . '/index.php');
 }
-$sql = "SELECT * FROM `articles` INNER JOIN `categories` on articles.category = categories.category_id";
+// Get the current user's ID
+$current_user_id = $_SESSION['USER']['user_id'];
+
+// Modify SQL query based on user role
+if ($isAdmin) {
+    // Admin sees all articles
+    $sql = "SELECT * FROM `articles` 
+            INNER JOIN `categories` ON articles.category = categories.category_id";
+} else {
+    // Expert sees only their own articles
+    $sql = "SELECT * FROM `articles` 
+            INNER JOIN `categories` ON articles.category = categories.category_id 
+            WHERE articles.user_id = $current_user_id";
+}
+
 $articles = mysqli_query($conn, $sql);
 
 ?>
@@ -27,27 +41,26 @@ $articles = mysqli_query($conn, $sql);
                         <h5>ادارة المقالات </h5>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
-                        <i class="uil uil-list-ul"> </i>
+                <?php if ($user_expert === 'expert'): ?>
 
-                        <h5>اضافة برنامج او دورة</h5>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <i class="uil uil-list-ul"> </i>
-                        <h5> ادارة البرامج</h5>
-                    </a>
-                </li>
-                <?php if($isAdmin): ?>
-                <li>
-                    <a href="manage-users.php">
-                        <i class="uil uil-user-plus"> </i>
-                        <h5> ادارة المستخدمين</h5>
-                    </a>
-                </li>
+                    <li>
+                        <a href="expert-consultations.php"><i class="fas fa-comments"></i>
+                            <h5>إدارة الاستشارات</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="expert-profile.php"><i class="fas fa-user-md"></i>
+                            <h5>الملف الشخصي</h5>
+                        </a>
+                    </li>
+                <?php endif; ?>
+                <?php if ($isAdmin): ?>
+                    <li>
+                        <a href="manage-users.php">
+                            <i class="uil uil-user-plus"> </i>
+                            <h5> ادارة المستخدمين</h5>
+                        </a>
+                    </li>
                 <?php endif; ?>
 
             </ul>
@@ -76,16 +89,20 @@ $articles = mysqli_query($conn, $sql);
                     </tr>
                 </thead>
                 <tbody>
-                    <?php while ($article = mysqli_fetch_assoc($articles)): ?>
+                    <?php if (mysqli_num_rows($articles) > 0): ?>
+                        <?php while ($article = mysqli_fetch_assoc($articles)): ?>
+                            <tr>
+                                <td data-label="العنوان"><?= $article['title'] ?></td>
+                                <td data-label="الفئة "><?= $article['category_name'] ?></td>
+                                <td data-label="تعديل "><a href="#" class="dashboard-btn sm">تعديل </a></td>
+                                <td data-label="حذف"><a href="delete-article.php?id=<?= $article['article_id'] ?>" class="dashboard-btn sm danger">حذف</a></td>
+                            </tr>
+                        <?php endwhile; ?>
+                    <?php else: ?>
                         <tr>
-                            <td><?= $article['title'] ?></td>
-                            <td><?= $article['category_name'] ?></td>
-                            <td><a href="#" class="dashboard-btn sm">تعديل </a></td>
-                            <td><a href="delete-article.php?id=<?= $article['article_id'] ?>" class="dashboard-btn danger">حذف</a></td>
+                            <td colspan="4" style="text-align: center;">لا توجد مقالات منشورة حالياً</td>
                         </tr>
-                    <?php endwhile; ?>
-
-
+                    <?php endif; ?>
                 </tbody>
             </table>
 

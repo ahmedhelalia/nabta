@@ -135,3 +135,4 @@ $load_posts = mysqli_query($conn, $load_posts_query);
 <br><br>
 
 </section>
+<?php include 'inc/footer.php'; ?>

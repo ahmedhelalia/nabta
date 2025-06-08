@@ -34,37 +34,36 @@ if (isset($_SESSION['USER'])) {
     <nav>
         <div class="nav_container">
             <a href="index.php" class="nav_logo">
-                 <img src="<?= ROOT ?>/assets/images/nabta-logo.png" alt="Nabta Logo">
+                <img src="<?= ROOT ?>/assets/images/nabta-logo.png" alt="Nabta Logo">
             </a>
             <button class="mobile-nav-toggle" aria-controls="nav_items" aria-expanded="false">
                 <i class="uil uil-bars"></i>
                 <span class="visually-hidden">القائمة</span>
             </button>
             <ul class="nav_items">
-                <li><a href="contact.php">تواصل معنا</a></li>
-                <li><a href="courses.php">البرامج والدورات</a></li>
-                <li><a href="articles.php">مقالات متنوعة</a></li>
-                <li><a href="community.php">المنتدى</a></li>
-
+                
                 <li><a href="index.php">الرئيسية</a></li>
-                <?php if (isset($_SESSION['USER'])): ?>
-                    <li style="margin-right: 40px;" class="nav_profile">
-                        <div class="avatar">
-                            <img src="<?= ROOT ?>/assets/images/<?= $user_avatar ?>" alt="broken">
-                        </div>
-                        <ul>
-                            <li><a href="profile.php">الاعدادات</a></li>
-                            <?php if ($isAdmin || $user_expert === 'expert'): ?>
-                                <li><a href="dashboard.php" style="white-space: nowrap;">لوحة التحكم </a></li>
-                            <?php endif; ?>
-                            <li><a href="logout.php">الخروج</a></li>
-                        </ul>
-                    </li>
-                <?php else: ?>
-                    <li style="margin-right: 90px;"><a href="signup.php">تسجيل</a></li>
-                <?php endif; ?>
-
+                <li><a href="community.php">المنتدى</a></li>
+                <li><a href="articles.php">مقالات متنوعة</a></li>
+                <li><a href="courses.php">البرامج والدورات</a></li>
+                <li><a href="contact.php">تواصل معنا</a></li>
 
             </ul>
+            <?php if (isset($_SESSION['USER'])): ?>
+                <li  class="nav_profile">
+                    <div class="avatar">
+                        <img src="<?= ROOT ?>/assets/images/<?= $user_avatar ?>" alt="broken">
+                    </div>
+                    <ul>
+                        <li><a href="profile.php">الاعدادات</a></li>
+                        <?php if ($isAdmin || $user_expert === 'expert'): ?>
+                            <li><a href="dashboard.php" style="white-space: nowrap;">لوحة التحكم </a></li>
+                        <?php endif; ?>
+                        <li><a href="logout.php">الخروج</a></li>
+                    </ul>
+                </li>
+            <?php else: ?>
+                <li class="nav-responsive-li" style="margin-right: 90px;"><a href="signup.php">تسجيل</a></li>
+            <?php endif; ?>
         </div>
     </nav>

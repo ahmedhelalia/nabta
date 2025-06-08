@@ -135,6 +135,8 @@ nav {
     display: flex;
     align-items: center;
     gap: 3rem;
+    margin-right: -8rem;
+    direction: rtl;
 }
 
 .nav_items a {
@@ -610,11 +612,11 @@ section {
 }
 
 /* Stats Section */
-.stats-section {
+.index-stats-section {
     padding: 4rem 0;
 }
 
-.stats-container {
+.index-stats-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -624,7 +626,7 @@ section {
     padding: 0 1rem;
 }
 
-.stat-card {
+.index-stat-card {
     background-color: var(--white);
     border-radius: 10px;
     padding: 2rem;
@@ -633,16 +635,202 @@ section {
     width: 200px;
 }
 
-.stat-number {
+.index-stat-number {
     font-size: 2.5rem;
     font-weight: 700;
     color: var(--primary-color);
     margin-bottom: 0.5rem;
 }
 
-.stat-title {
+.index-stat-title {
     font-size: 1.1rem;
     color: var(--dark-color);
+}
+
+/* Expert user styles */
+.expert-alert {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    padding: 2rem;
+    margin: 2rem auto;
+    border-radius: 15px;
+    max-width: 900px;
+    direction: rtl;
+}
+
+.expert-alert-content {
+    text-align: center;
+    color: var(--white);
+}
+
+.expert-alert-content i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.expert-alert-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.expert-alert-content p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.expert-alert-button {
+    display: inline-block;
+    background: var(--white);
+    color: var(--primary-color);
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.expert-alert-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background: var(--secondary-color);
+    color: var(--white);
+}
+
+.expert-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.view-profile-btn {
+    background: var(--accent-color);
+    color: var(--color-white);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: var(--transition);
+}
+
+.view-profile-btn:hover {
+    background: var(--primary-color);
+}
+
+.expert-bio {
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    color: var(--color-dark);
+    text-align: center;
+}
+
+.no-experts {
+    grid-column: 1/-1;
+    text-align: center;
+    padding: 2rem;
+    color: var(--color-dark);
+}
+
+/* Expert Profile Page Styles */
+.expert-profile-container {
+    max-width: 900px;
+    margin: 6rem auto 3rem;
+    padding: 2rem;
+    background: var(--accent-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    color: var(--white);
+    direction: rtl;
+}
+
+.expert-profile-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.expert-profile-header img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 4px solid var(--secondary-color);
+    margin: 0 auto 1.5rem;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.expert-profile-header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+}
+
+.expert-profile-header h2 {
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+    font-weight: normal;
+}
+
+.expert-profile-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.expert-bio h3,
+.expert-contact-info h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.expert-bio p {
+    line-height: 1.8;
+    color: var(--light-color);
+    text-align: justify;
+}
+
+.expert-contact-info {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    height: fit-content;
+}
+
+.expert-contact-info p {
+    margin-bottom: 1.5rem;
+    color: var(--light-color);
+}
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #25D366;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-decoration: none;
+    width: 100%;
+    justify-content: center;
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+    background: #1fa855;
+}
+
+.form_control input[dir="rtl"] {
+    text-align: left;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 1px;
+}
+
+.form_control input[type="text"]::placeholder {
+    opacity: 0.6;
+    font-size: 0.9rem;
 }
 
 /** Chat bot **/
@@ -1764,6 +1952,7 @@ textarea::placeholder {
     transition: all 0.3s ease;
     white-space: nowrap;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 5px;
 }
 
 .search-btn:hover {
@@ -1774,6 +1963,30 @@ textarea::placeholder {
 
 .search-btn:active {
     transform: translateY(0);
+}
+
+/* empty search */
+.empty__search {
+    text-align: center;
+    padding: 2rem;
+    margin: 15%;
+    background-color: #faf8f8;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.empty__search p {
+    color: #d02929;
+    font-size: 1.2rem;
+    margin: 0;
+    font-weight: 500;
+}
+
+.search-items input[type="search"]::placeholder {
+    color: #2a2929;
+    font-size: 0.9rem;
+    text-align: right;
+    direction: rtl;
 }
 
 /* Articles Grid */
@@ -1935,6 +2148,27 @@ textarea::placeholder {
 }
 
 /* Sidebar Styles */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+}
+
+.dashboard aside {
+    transition: transform 0.3s ease, right 0.3s ease;
+}
+
 .dashboard aside {
     background: var(--accent-color);
     padding: 1rem;
@@ -1993,17 +2227,19 @@ textarea::placeholder {
 .dashboard table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 1rem;
+    direction: rtl;
     background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .dashboard table th {
     background: var(--primary-color);
     padding: 1rem;
-    color: var(--white);
+    color: var(--text-color);
     font-weight: 600;
-    text-align: right;
-    margin: auto;
+    text-align: center;
 }
 
 .dashboard table td {
@@ -2033,10 +2269,12 @@ textarea::placeholder {
     background: var(--primary-color);
     color: var(--white);
 }
+
 .dashboard-btn.warning {
-    background:#ffc107;
+    background: #ffc107;
     color: var(--white);
 }
+
 .dashboard-btn.danger {
     background: #dc3545;
     color: var(--white);
@@ -2151,7 +2389,7 @@ textarea::placeholder {
     font-size: 0.95rem;
 }
 
-.dashboard_form_container .btn {
+.dashboard-btn {
     align-self: flex-start;
     padding: 0.8rem 2rem;
     background: var(--primary-color);
@@ -2164,7 +2402,7 @@ textarea::placeholder {
     transition: all 0.3s ease;
 }
 
-.dashboard_form_container .btn:hover {
+.dashboard-btn:hover {
     background: var(--secondary-color);
     transform: translateY(-2px);
 }
@@ -2242,6 +2480,543 @@ textarea::placeholder {
     white-space: pre-wrap;
 }
 
+/** ======================================================= */
+/* ==================== END Single POST ================== */
+
+/**======================================================*/
+/*===================== start consultations ==============*/
+/**======================================================*/
+.consultations-section {
+    padding: 6rem 0;
+    min-height: 100vh;
+    background-color: #0A7075;
+
+}
+
+/* Hero Banner */
+.hero-banner {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #032F30 0%, #054950 100%);
+    margin: auto;
+    border-radius: 50px;
+    max-width: 1200px;
+}
+
+.hero-banner h1 {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+.hero-banner p {
+    font-size: 1.2rem;
+    color: #f4f4f4;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Consultation Categories */
+.consultation-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+.consultations-category-card {
+    background: #032F30;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    direction: rtl;
+}
+
+.consultations-category-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.consultations-category-icon {
+    width: 80px;
+    height: 80px;
+    background: #0A7075;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.consultations-category-icon i {
+    font-size: 2rem;
+    color: var(--secondary-color);
+}
+
+.consultations-category-card h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.consultations-category-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.consultations-category-card ul li {
+    color: #f4f4f4;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+}
+
+.book-btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: var(--secondary-color);
+    color: #032F30;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+    background: #fff;
+    transform: translateY(-3px);
+}
+
+/* Booking Form Section */
+.booking-section {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.consultations-title {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Quick Contact & Pricing Info Styles */
+.quick-contact,
+.pricing-info {
+    background: #032F30;
+    border-radius: 15px;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    direction: rtl;
+}
+
+.quick-contact h3,
+.pricing-info h3 {
+    color: var(--secondary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.quick-contact h3::after,
+.pricing-info h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--secondary-color);
+    opacity: 0.5;
+}
+
+.quick-contact p {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.quick-contact strong {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+}
+
+.quick-contact a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.quick-contact a:hover {
+    color: #fff;
+}
+
+.pricing-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pricing-info li {
+    color: #fff;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 1.1rem;
+}
+
+.pricing-info li:last-child {
+    border-bottom: none;
+}
+
+/* Experts Section */
+.experts-section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.experts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.expert-card {
+    background: linear-gradient(135deg, #032F30 0%, #054950 100%);
+    border-radius: 20px;
+    overflow: hidden;
+    text-align: center;
+    transition: all 0.4s ease;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.expert-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    border-color: rgba(228, 155, 15, 0.3);
+}
+
+.expert-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin: 2rem auto 1.5rem;
+    padding: 5px;
+    background: linear-gradient(45deg, #E49B0F, #FFD700);
+    transition: all 0.4s ease;
+}
+
+.expert-card:hover .expert-image {
+    transform: scale(1.05);
+}
+
+.expert-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #032F30;
+}
+
+.expert-name {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+    direction: rtl;
+
+}
+
+.expert-specialization {
+    color: #E49B0F;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+}
+
+.expert-contact {
+    padding: 0 2rem 2rem;
+}
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: #25D366;
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    width: 100%;
+    border: 2px solid transparent;
+}
+
+.whatsapp-btn i {
+    font-size: 1.2rem;
+}
+
+.whatsapp-btn:hover {
+    background: #128C7E;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+/* Add to your style.css file */
+.consultation-details {
+    padding: 2rem;
+}
+
+.consultation-card {
+    background: var(--color-white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 2rem;
+}
+
+.consultation-card h3 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.user-info,
+.consultation-info,
+.consultation-message {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-light);
+}
+
+.consultation-info p,
+.user-info p {
+    margin-bottom: 0.5rem;
+    color: var(--color-dark);
+}
+
+.message-content {
+    background: var(--color-light);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: var(--color-dark);
+    line-height: 1.6;
+}
+
+.consultation-actions {
+    margin-top: 2rem;
+}
+
+.consultation-actions .form-group {
+    margin-bottom: 1rem;
+}
+
+.consultation-actions select {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-light);
+    margin-bottom: 1rem;
+}
+
+.back-link {
+    margin-top: 2rem;
+}
+
+.back-link a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.back-link i {
+    font-size: 1.2rem;
+}
+
+/* Consultation Booking Styles */
+.consultation-booking {
+    background: var(--primary-color);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.consultation-booking h3 {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.booking-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.booking-form select,
+.booking-form input,
+.booking-form textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.booking-form select {
+    cursor: pointer;
+}
+
+.booking-form select option {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.booking-form input::placeholder,
+.booking-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.booking-form select:focus,
+.booking-form input:focus,
+.booking-form textarea:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(10, 112, 117, 0.2);
+}
+
+.booking-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background: #054950;
+    color: #fff;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(10, 112, 117, 0.3);
+}
+
+.login-prompt {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.login-prompt p {
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.login-prompt a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.login-prompt a:hover {
+    color: #0c8589;
+}
+
+/* ======================================================= */
+/* ==================== END Consultations ================ */
+/* ======================================================= */
+/* Consultation Dashboard Specific Styles */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #032F30 0%, #054950 100%);
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card h3 {
+    color: var(--light-color);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.stat-number {
+    color: var(--secondary-color);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.status-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.status-badge.pending {
+    background: rgba(255, 193, 7, 0.2);
+    color: #ffc107;
+}
+
+.status-badge.in-progress {
+    background: rgba(13, 110, 253, 0.2);
+    color: #0d6efd;
+}
+
+.status-badge.completed {
+    background: rgba(25, 135, 84, 0.2);
+    color: #198754;
+}
+
+.consultations-table {
+    background: var(--accent-color);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+}
+
 /* ======================================================= */
 /* ==================== RESPONSIVE STYLES ================ */
 /* ======================================================= */
@@ -2257,75 +3032,96 @@ textarea::placeholder {
     }
 }
 
+/* Mobile Navigation Styles */
 @media screen and (max-width: 768px) {
-    .mobile-nav-toggle {
-        display: block;
-        z-index: 2000;
+    .nav_container {
+        position: relative;
+        padding: 0 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
+    .mobile-nav-toggle {
+        display: block;
+        order: 3;
+    }
+
+    .nav_logo {
+        order: 1;
+        position: fixed;
+        left: 6%;
+    }
+  
+
+    /* Keep nav_profile visible and move it between logo and burger */
+    .nav_profile {
+        order: 2;
+        position: relative;
+        margin-left: 77%;
+        
+    }
+    .nav-responsive-li{
+       
+        position: relative;
+        margin-left: 50%;
+    }
     .nav_items {
         position: fixed;
-        inset: 4.5rem 0 0 0;
+        top: 4.5rem;
+        right: -100%;
+        width: 100%;
+        height: calc(100vh - 4.5rem);
         background: var(--accent-color);
         display: flex;
         flex-direction: column;
         padding: 2rem;
-        transform: translateX(100%);
-        transition: transform 0.3s ease-out;
-        z-index: 1000;
+        transition: all 0.3s ease-in-out;
+        z-index: 999;
     }
 
-    .nav_items.active {
-        transform: translateX(0);
-    }
-
-    .nav_items li {
-        margin: 0.5rem 0;
-        text-align: center;
-    }
-
-    .nav_items a {
-        display: block;
-        padding: 1rem 0;
-        width: 100%;
-    }
-
-    .nav_profile {
-        margin: 1rem 0;
-    }
-
-    .nav_profile ul {
-        width: 100%;
-        position: static;
-        background: transparent;
-        box-shadow: none;
-        visibility: visible;
-        opacity: 1;
-        transform: none;
+    /* Hide all nav items except profile in mobile menu */
+    .nav_items li:not(.nav_profile) {
         display: none;
     }
 
+    .nav_items.active li:not(.nav_profile) {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    /* Profile dropdown adjustments */
+    .nav_profile ul {
+        position: absolute;
+        top: 100%;
+        right:0;
+        width: 200px;
+        background: var(--accent-color);
+        border-radius: 10px;
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
     .nav_profile:hover ul {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /* Show nav items when menu is active */
+    .nav_items.active {
+        right: 0;
+    }
+
+    .nav_items.active li:not(.nav_profile) {
         display: block;
     }
 
-    .nav_profile ul li a {
-        padding: 0.8rem;
-        text-align: center;
-    }
-
-    .nav_logo img {
+    /* Adjust avatar size for mobile */
+    .avatar {
+        width: 2.5rem;
         height: 2.5rem;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .nav_logo {
-        font-size: 1.2rem;
-    }
-
-    .nav_container {
-        padding: 0 0.5rem;
     }
 }
 
@@ -2336,6 +3132,7 @@ textarea::placeholder {
     }
 
     .hero-section {
+        margin-top: 3rem;
         height: 400px;
     }
 
@@ -2494,19 +3291,16 @@ textarea::placeholder {
 
 /* Profile Page Responsive */
 @media (max-width: 768px) {
-    .profile_container {
-        margin: 6rem 1rem;
-        padding: 1.5rem;
-    }
-
     .profile_avatar {
-        width: 10rem;
+        width: 12rem;
         margin-top: -5rem;
     }
 
     .profile_buttons {
+        display: flex;
         flex-direction: column;
         align-items: center;
+        margin-left: 50%;
     }
 
     .profile_buttons .btn {
@@ -2542,6 +3336,10 @@ textarea::placeholder {
     .class_11,
     .postComments {
         margin: 30px auto auto;
+    }
+
+    .class_11 h1 {
+        margin-top: 40px;
     }
 
     .class_14 {
@@ -2753,58 +3551,93 @@ textarea::placeholder {
         top: 6rem;
         right: 1rem;
         z-index: 1000;
-        background: var(--primary-color);
-        color: var(--white);
+        background: var(--white);
+        color: var(--secondary-color);
         border-radius: 50%;
         width: 40px;
         height: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-top: -1.8rem;
+    }
+
+    .dashboard aside {
+        transform: translateX(100%);
+    }
+
+    .dashboard aside.show {
+        transform: translateX(0);
+    }
+
+    .sidebar-overlay.show {
+        display: block;
     }
 }
 
+/* Mobile Responsive Styles */
 @media screen and (max-width: 768px) {
-    .dashboard main {
-        padding: 1rem;
-    }
-
     .dashboard table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
+        background: transparent;
+        box-shadow: none;
     }
 
-    .dashboard table th,
+    .dashboard table thead {
+        display: none;
+    }
+
+    .dashboard table tr {
+        display: flex;
+        flex-direction: column;
+        background: var(--white);
+        padding: 1rem;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
     .dashboard table td {
-        padding: 0.8rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.8rem 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .dashboard table td:last-child {
+        border-bottom: none;
+    }
+
+    .dashboard table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: var(--primary-color);
+        margin: 3px;
+    }
+
+    /* Button styling for mobile */
+    .dashboard table td:nth-last-child(-n+2) {
+        border: none;
+        padding: 0.5rem 0;
     }
 
     .dashboard-btn {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.9rem;
+        width: 80%;
+        text-align: center;
+        margin: 0.25rem 0;
     }
 
-    .dashboard_form_container {
-        padding: 1.5rem;
+    .dashboard-btn.sm {
+        padding: 0.6rem 1rem;
+        text-align: center;
     }
 
-    .dashboard_form_container h2 {
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .dashboard_form_container input,
-    .dashboard_form_container select,
-    .dashboard_form_container textarea {
-        padding: 0.8rem;
-    }
-
-    .dashboard_form_container .btn {
-        width: 100%;
-        padding: 0.8rem;
+    .dashboard-btn.danger {
+        padding: 0.6rem 1rem;
+        width: 75%;
     }
 }
+
 
 @media screen and (max-width: 576px) {
     .dashboard main h2 {
@@ -2875,5 +3708,146 @@ textarea::placeholder {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.5rem;
+    }
+}
+
+/* Expert user responsive */
+@media screen and (max-width: 768px) {
+    .expert-alert {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .expert-alert-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .expert-alert-content p {
+        font-size: 1rem;
+    }
+}
+
+/* Consultations Responsive */
+@media (max-width: 768px) {
+    .hero-banner {
+        padding: 3rem 1rem;
+    }
+
+    .hero-banner h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-banner p {
+        font-size: 1rem;
+    }
+
+    .consultation-categories {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+
+    .booking-form {
+        padding: 1.5rem;
+    }
+
+    .consultations-title {
+        font-size: 1.7rem;
+    }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .stats-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+
+    .stat-card {
+        padding: 1rem;
+    }
+
+    .stat-card h3 {
+        font-size: 1rem;
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .expert-profile-container {
+        margin: 5rem 1rem 2rem;
+        padding: 1.5rem;
+    }
+
+    .expert-profile-header img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .expert-profile-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .expert-profile-header h2 {
+        font-size: 1.1rem;
+    }
+
+    .expert-profile-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .consultation-card {
+        padding: 1rem;
+    }
+
+    .consultation-details {
+        padding: 1rem;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+
+    .quick-contact,
+    .pricing-info {
+        margin: 2rem 1rem;
+        padding: 1.5rem;
+    }
+
+    .quick-contact h3,
+    .pricing-info h3 {
+        font-size: 1.5rem;
+    }
+
+    .quick-contact p,
+    .pricing-info li {
+        font-size: 1rem;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .consultation-booking {
+        padding: 1.5rem;
+    }
+
+    .consultation-booking h3 {
+        font-size: 1.3rem;
+    }
+
+    .booking-form select,
+    .booking-form input,
+    .booking-form textarea {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .submit-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
     }
 }

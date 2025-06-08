@@ -35,7 +35,7 @@ require_once 'config/init.php';
             </p>
         </div>
         <?php endif;?>
-        <form action="<?= ROOT ?>/loginAuth.php" enctype="multipart/form-data" method="post">
+        <form action="loginAuth.php" enctype="multipart/form-data" method="post">
       
             <input type="text" name="email"  placeholder="الحساب الالكتروني" >
             <input type="password" name="password"  placeholder="كلمة السر" >

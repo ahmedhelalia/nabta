@@ -96,6 +96,7 @@
         </div>
     </div>
 </section>
+<?php if(!isset($_SESSION['USER'])): ?>
 <section class="cta-section">
     <div class="cta-content">
         <h2>ابدأ رحلة تطوير أسرتك الآن</h2>
@@ -103,29 +104,39 @@
         <a href="signup.php" class="cta-button-large">سجل الآن</a>
     </div>
 </section>
-
-<section class="stats-section">
+<?php endif; ?>
+<?php if (isset($_SESSION['USER']) && $user_expert === 'expert'): ?>
+    <div class="expert-alert">
+        <div class="expert-alert-content">
+            <i class="fas fa-user-md"></i>
+            <h3>مرحباً بك كخبير في منصتنا</h3>
+            <p>نرحب بمشاركة خبراتك مع مجتمعنا. للبدء في تقديم خدماتك الاستشارية، يرجى التواصل معنا</p>
+            <a href="contact.php" class="expert-alert-button">تواصل معنا</a>
+        </div>
+    </div>
+<?php endif; ?>
+<section class="index-stats-section">
     <h2 class="section-title-home">تأثيرنا</h2>
 
-    <div class="stats-container">
-        <div class="stat-card">
-            <div class="stat-number">1000+</div>
-            <div class="stat-title">استشارة</div>
+    <div class="index-stats-container">
+        <div class="index-stat-card">
+            <div class="index-stat-number">1000+</div>
+            <div class="index-stat-title">استشارة</div>
         </div>
 
-        <div class="stat-card">
-            <div class="stat-number">50+</div>
-            <div class="stat-title">دورة تدريبية</div>
+        <div class="index-stat-card">
+            <div class="index-stat-number">50+</div>
+            <div class="index-stat-title">دورة تدريبية</div>
         </div>
 
-        <div class="stat-card">
-            <div class="stat-number">200+</div>
-            <div class="stat-title">مقال تعليمي</div>
+        <div class="index-stat-card">
+            <div class="index-stat-number">200+</div>
+            <div class="index-stat-title">مقال تعليمي</div>
         </div>
 
-        <div class="stat-card">
-            <div class="stat-number">5000+</div>
-            <div class="stat-title">مستخدم مسجل</div>
+        <div class="index-stat-card">
+            <div class="index-stat-number">5000+</div>
+            <div class="index-stat-title">مستخدم مسجل</div>
         </div>
     </div>
 </section>

@@ -39,53 +39,102 @@ checkSections(); // Check on initial load
 // Mobile navigation toggle
 const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
 const navItems = document.querySelector('.nav_items');
+const mobile_overlay = document.createElement('div');
+mobile_overlay.className = 'nav-overlay';
+document.body.appendChild(mobile_overlay);
 
 mobileNavToggle.addEventListener('click', () => {
     navItems.classList.toggle('active');
     const icon = mobileNavToggle.querySelector('i');
     icon.classList.toggle('uil-bars');
     icon.classList.toggle('uil-times');
+    mobile_overlay.classList.toggle('active');
 });
 
 // Close mobile menu when clicking outside
 document.addEventListener('click', (e) => {
-    if (!navItems.contains(e.target) && !mobileNavToggle.contains(e.target)) {
+    if (!navItems.contains(e.target) &&
+        !mobileNavToggle.contains(e.target) &&
+        navItems.classList.contains('active')) {
         navItems.classList.remove('active');
         const icon = mobileNavToggle.querySelector('i');
         icon.classList.remove('uil-times');
         icon.classList.add('uil-bars');
+        mobile_overlay.classList.remove('active');
     }
 });
 // Dashboard sidebar toggle
 const showSidebarBtn = document.querySelector('#show__sidebar-btn');
 const hideSidebarBtn = document.querySelector('#hide__sidebar-btn');
 const sidebar = document.querySelector('.dashboard aside');
+let sidebarState = localStorage.getItem('sidebarState') === 'open';
 
-if(showSidebarBtn) {
-    showSidebarBtn.addEventListener('click', () => {
-        sidebar.classList.add('show');
-        showSidebarBtn.style.display = 'none';
-        hideSidebarBtn.style.display = 'flex';
-    });
+// Create overlay element
+const overlay = document.createElement('div');
+overlay.className = 'sidebar-overlay';
+document.body.appendChild(overlay);
+
+function openSidebar() {
+    sidebar.classList.add('show');
+    overlay.classList.add('show');
+    showSidebarBtn.style.display = 'none';
+    hideSidebarBtn.style.display = 'flex';
+    localStorage.setItem('sidebarState', 'open');
+
+    // Focus on first interactive element in sidebar
+    const firstLink = sidebar.querySelector('a');
+    if (firstLink) firstLink.focus();
 }
 
-if(hideSidebarBtn) {
-    hideSidebarBtn.addEventListener('click', () => {
-        sidebar.classList.remove('show');
-        showSidebarBtn.style.display = 'flex';
-        hideSidebarBtn.style.display = 'none';
-    });
+function closeSidebar() {
+    sidebar.classList.remove('show');
+    overlay.classList.remove('show');
+    showSidebarBtn.style.display = 'flex';
+    hideSidebarBtn.style.display = 'none';
+    localStorage.setItem('sidebarState', 'closed');
 }
 
-// Close sidebar when clicking outside on mobile
+// Initialize sidebar state
+if (sidebarState && window.innerWidth >= 992) {
+    openSidebar();
+}
+
+if (showSidebarBtn) {
+    showSidebarBtn.addEventListener('click', openSidebar);
+}
+
+if (hideSidebarBtn) {
+    hideSidebarBtn.addEventListener('click', closeSidebar);
+}
+
+// Handle overlay click
+overlay.addEventListener('click', closeSidebar);
+
+// Handle keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && sidebar.classList.contains('show')) {
+        closeSidebar();
+    }
+});
+
+// Update sidebar state on window resize
+let resizeTimer;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        if (window.innerWidth >= 992) {
+            overlay.classList.remove('show');
+        }
+    }, 250);
+});
+
+// Close sidebar when clicking outside
 document.addEventListener('click', (e) => {
-    if(window.innerWidth < 992) {
-        if(!sidebar.contains(e.target) && 
-           !showSidebarBtn.contains(e.target) && 
-           !hideSidebarBtn.contains(e.target)) {
-            sidebar.classList.remove('show');
-            showSidebarBtn.style.display = 'flex';
-            hideSidebarBtn.style.display = 'none';
+    if (window.innerWidth < 992) {
+        if (!sidebar.contains(e.target) &&
+            !showSidebarBtn.contains(e.target) &&
+            !hideSidebarBtn.contains(e.target)) {
+            closeSidebar();
         }
     }
 });

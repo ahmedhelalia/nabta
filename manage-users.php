@@ -25,20 +25,7 @@ $users_query_result = mysqli_query($conn, $users_query);
                         <h5>ادارة المقالات </h5>
                     </a>
                 </li>
-                <li>
-                    <a href="add-user.html">
-                        <i class="uil uil-list-ul"> </i>
 
-                        <h5>اضافة برنامج او دورة</h5>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <i class="uil uil-list-ul"> </i>
-                        <h5> ادارة البرامج</h5>
-                    </a>
-                </li>
                 <li>
                     <a href="#" class="active">
                         <i class="uil uil-user-plus"> </i>
@@ -87,12 +74,12 @@ $users_query_result = mysqli_query($conn, $users_query);
                 <tbody>
                     <?php while ($user = mysqli_fetch_assoc($users_query_result)): ?>
                         <tr>
-                            <td><?= $user['email'] ?></td>
-                            <td><?= $user['first_name'] . ' ' . $user['last_name'] ?></td>
-                            <td><?= $user['user_role']  ?></td>
-                            <td><a href="#" class="dashboard-btn sm">تعديل </a></td>
-                            <td><a href="#" class="dashboard-btn warning">حظر </a></td>
-                            <td><a href="delete-user.php?id=<?= $user['id'] ?>" class="dashboard-btn danger">حذف</a></td>
+                            <td data-label="الحساب الالكتروني"><?= $user['email'] ?></td>
+                            <td data-label="اسم المستخدم"><?= $user['first_name'] . ' ' . $user['last_name'] ?></td>
+                            <td data-label="دور المستخدم"><?= $user['user_role']  ?></td>
+                            <td data-label="تعديل"><a href="#" class="dashboard-btn sm">تعديل </a></td>
+                            <td data-label="حظر"><a href="#" class="dashboard-btn sm warning">حظر </a></td>
+                            <td data-label="حذف"><a href="delete-user.php?id=<?= $user['id'] ?>" class="dashboard-btn sm danger">حذف</a></td>
                         </tr>
                     <?php endwhile; ?>
 
