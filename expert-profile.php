@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </a>
                     </li>
                       <li>
-                        <a href="expert-prices.php"><i class="fas fa-comments"></i>
+                        <a href="expert-prices.php"><i class="fa-solid fa-money-check-dollar"></i>
                             <h5>إدارة اسعار الاستشارات</h5>
                         </a>
                     </li>

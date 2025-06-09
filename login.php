@@ -40,7 +40,7 @@ require_once 'config/init.php';
             <input type="text" name="email"  placeholder="الحساب الالكتروني" >
             <input type="password" name="password"  placeholder="كلمة السر" >
             
-            <button type="submit" name="submit" class="btn"> الدخول </button>
+            <button type="submit" name="submit" class="btn form-btn"> الدخول </button>
             <div class="end_form">
             <small> ليس لديك حساب؟ <a href="signup.php" style="color:white">انشاء حساب</a> <a href="index.php" style="color:white">الرئيسية</a></small>
             </div>

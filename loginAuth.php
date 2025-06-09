@@ -20,6 +20,13 @@ if (isset($_POST['submit'])) {
             $db_password = $user_record['PASSWORD'];
             // Compare form password with hashed password from data base
             if (password_verify($password, $db_password)) {
+                // Check if user is blocked
+                if ($user_record['blocked']) {
+                    $errors['login'] = "هذا الحساب محظور. يرجى التواصل مع الإدارة.";
+                    $_SESSION['user_login_errors'] = $errors;
+                    header('location:' . ROOT . '/login.php');
+                    die();
+                }
                 // Set session for access control
                 $_SESSION['USER']['user_id'] = $user_record['id'];
                 // Set Session if user is admin or expert
@@ -41,10 +48,9 @@ if (isset($_POST['submit'])) {
         die();
     } else {
         $_SESSION['user_login_errors'] = $errors;
-        header('location:'.ROOT.'/login.php');
+        header('location:' . ROOT . '/login.php');
+        die();
     }
-    
-
 } else {
     header('location:' . ROOT . '/login.php');
     die();

@@ -61,7 +61,7 @@ unset($_SESSION['signup_data']);
                     <label for="avatar" class="form_pp">صورة الملف الشخصى</label>
                     <input type="file" name="avatar" id="avatar" style="direction: rtl;">
                 </div>
-                <button type="submit" name="submit" class="btn"> تسجيل</button>
+                <button type="submit" name="submit" class="btn form-btn"> تسجيل</button>
                 <div class="end_form">
                     <small> لديك حساب بالفعل؟ <a href="login.php" style="color:white"> تسجيل الدخول</a> <a href="index.php" style="color:white">الرئيسية</a></small>
                 </div>

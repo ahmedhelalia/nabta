@@ -20,7 +20,7 @@ mysqli_stmt_execute($stmt);
 $consultations = mysqli_stmt_get_result($stmt);
 
 ?>
-<section class="dashboard" style="margin-right: -4rem;">
+<section class="dashboard" style="margin-right: -12rem;">
     <div class="mainDash-container dashboard__container">
         <button id="show__sidebar-btn" class="sidebar__toggle"><i class="uil uil-angle-right-b"></i></button>
         <button id="hide__sidebar-btn" class="sidebar__toggle"><i class="uil uil-angle-left-b"></i></button>
@@ -46,7 +46,7 @@ $consultations = mysqli_stmt_get_result($stmt);
                         </a>
                     </li>
                     <li>
-                        <a href="expert-prices.php"><i class="fas fa-comments"></i>
+                        <a href="expert-prices.php"><i class="fa-solid fa-money-check-dollar"></i>
                             <h5>إدارة اسعار الاستشارات</h5>
                         </a>
                     </li>
