@@ -140,6 +140,62 @@ document.addEventListener('click', (e) => {
 });
 // chat bot
 document.addEventListener('DOMContentLoaded', function () {
+
+    let conversationContext = {
+        lastCategory: null
+    };
+    // Add this at the top of your chatbot code
+    const botResponses = {
+        greeting: {
+            keywords: ['مرحبا', 'السلام', 'اهلا', 'صباح الخير', 'مساء الخير'],
+            responses: [
+                'مرحباً بك في نبتة! كيف يمكنني مساعدتك اليوم؟ نقدم استشارات زوجية وأسرية متخصصة',
+                'أهلاً بك! هل تبحث عن استشارة متخصصة أم معلومات عن مراحل تطور الأسرة؟'
+            ]
+        },
+        marriage_prep: {
+            keywords: ['خطوبة', 'زواج', 'مقبل', 'عريس', 'عروس', 'قبل الزواج'],
+            responses: [
+                'مرحلة ما قبل الزواج مهمة جداً! يمكنك الاطلاع على نصائح وإرشادات مفيدة في <a href="stage1.html">قسم ما قبل الزواج</a>',
+                'نقدم استشارات متخصصة للمقبلين على الزواج. تصفح <a href="stage1.html#v4">قائمة مستشارينا</a>'
+            ]
+        },
+        family_issues: {
+            keywords: ['مشكلة', 'خلاف', 'صعوبة', 'زوجية', 'عائلية'],
+            responses: [
+                'يمكنك التحدث مع أحد مستشارينا المتخصصين في حل المشكلات الزوجية. <a href="consultations.php">احجز استشارة الآن</a>',
+                'نحن هنا لمساعدتك. خبراؤنا متخصصون في حل المشكلات الأسرية. <a href="consultations.php#experts-section">اختر مستشارك</a>'
+            ]
+        },
+        children: {
+            keywords: ['طفل', 'اطفال', 'ابن', 'ابناء', 'تربية', 'مراهق'],
+            responses: [
+                'نقدم نصائح وإرشادات متخصصة في تربية الأطفال والمراهقين. زر <a href="stage3.html">قسم مرحلة الأبناء</a>',
+                'هل تواجه تحديات في تربية أطفالك؟ استشر خبراءنا المتخصصين في التربية والأسرة'
+            ]
+        },
+        courses: {
+            keywords: ['دورة', 'تدريب', 'تعلم', 'ورشة'],
+            responses: [
+                'نقدم دورات متخصصة في التطوير الأسري والزوجي. <a href="courses.php">تصفح دوراتنا</a>',
+                'اكتسب مهارات جديدة مع دوراتنا التدريبية المتخصصة. <a href="courses.php">اكتشف الدورات المتاحة</a>'
+            ]
+        },
+        psychological: {
+            keywords: ['نفسي', 'اكتئاب', 'قلق', 'توتر', 'ضغط'],
+            responses: [
+                'الصحة النفسية مهمة جداً للحياة الأسرية. يمكنك استشارة متخصصينا النفسيين <a href="consultations.php">من هنا</a>',
+                'نقدم دعماً نفسياً متخصصاً للأزواج والعائلات. تحدث مع مستشارينا المتخصصين <a href="consultations.php#experts-section">من هنا</a>'
+            ]
+        },
+        community: {
+            keywords: ['مجتمع', 'منتدى', 'تجارب', 'مشاركة'],
+            responses: [
+                'شارك تجاربك وتعلم من تجارب الآخرين في <a href="community.php">منتدى نبتة</a>',
+                'انضم لمجتمعنا الداعم وشارك في النقاشات المفيدة. <a href="community.php">زر المنتدى</a>'
+            ]
+        }
+    };
     const chatButton = document.querySelector('.chat-button');
     const chatContainer = document.querySelector('.chat-container');
     const chatInput = document.querySelector('.chat-input input');
@@ -154,30 +210,86 @@ document.addEventListener('DOMContentLoaded', function () {
     // Send message function
     function sendMessage(message) {
         // Add user message
-        const userMessage = document.createElement('div');
-        userMessage.className = 'message user-message';
-        userMessage.textContent = message;
-        chatMessages.appendChild(userMessage);
+        addMessage(message, 'user-message');
 
-        // Simple bot responses based on keywords
+        // Show typing indicator
+        const typingIndicator = document.createElement('div');
+        typingIndicator.className = 'typing-indicator';
+        typingIndicator.innerHTML = '<span></span><span></span><span></span>';
+        chatMessages.appendChild(typingIndicator);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+
+        // Process bot response
         setTimeout(() => {
-            const botMessage = document.createElement('div');
-            botMessage.className = 'message bot-message';
-
-            if (message.includes('مرحبا') || message.includes('السلام عليكم')) {
-                botMessage.textContent = 'مرحباً بك! كيف يمكنني مساعدتك اليوم؟';
-            } else if (message.includes('استشارة') || message.includes('مشكلة')) {
-                botMessage.textContent = 'يمكنك حجز استشارة مع أحد خبرائنا من خلال قسم الاستشارات';
-            } else if (message.includes('دورة') || message.includes('تدريب')) {
-                botMessage.textContent = 'لدينا العديد من الدورات التدريبية المتخصصة، يمكنك استعراضها في قسم الدورات';
-            } else {
-                botMessage.textContent = 'عذراً، لم أفهم سؤالك. هل يمكنك إعادة صياغته بطريقة أخرى؟';
+            // Remove typing indicator
+            typingIndicator.remove();
+            // Get bot response
+            let response = '';
+            for (const [category, data] of Object.entries(botResponses)) {
+                if (data.keywords.some(keyword => message.includes(keyword))) {
+                    conversationContext.lastCategory = category; // Save category
+                    response = getContextualResponse(category, data.responses);
+                    break;
+                }
             }
-            chatMessages.appendChild(botMessage);
+
+            // If no matching response found, use default
+            if (!response) {
+                if (conversationContext.lastCategory) {
+                    response = getFollowUpQuestion(conversationContext.lastCategory);
+                } else {
+                    response = 'عذراً، لم أفهم سؤالك. هل يمكنك إعادة صياغته بطريقة أخرى؟';
+                }
+            }
+
+            // Add bot response
+            addMessage(response, 'bot-message');
+
+            // Scroll to bottom
             chatMessages.scrollTop = chatMessages.scrollHeight;
-        }, 500);
+        }, 1000);
     }
 
+    function addMessage(text, className) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${className}`;
+        messageDiv.innerHTML = text;
+        const links = messageDiv.getElementsByTagName('a');
+        Array.from(links).forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.location.href = link.href;
+            });
+        });
+        chatMessages.appendChild(messageDiv);
+    }
+    function getContextualResponse(category, responses) {
+        const baseResponse = responses[Math.floor(Math.random() * responses.length)];
+
+        // Add category-specific follow-up questions
+        const followUps = {
+            marriage_prep: 'هل تريد معرفة المزيد عن خدمات الاستشارة قبل الزواج؟',
+            family_issues: 'هل ترغب في التحدث مع أحد مستشارينا؟',
+            children: 'هل لديك أسئلة محددة عن تربية الأطفال؟',
+            courses: 'هل تريد معرفة مواعيد الدورات القادمة؟',
+            psychological: 'هل ترغب في حجز موعد مع مستشار نفسي؟'
+        };
+
+        return `${baseResponse}\n\n${followUps[category] || ''}`;
+    }
+
+    function getFollowUpQuestion(category) {
+        const followUps = {
+            marriage_prep: 'هل تحتاج إلى مزيد من المعلومات عن الاستشارات الزوجية؟',
+            family_issues: 'هل هناك موضوع محدد تريد مناقشته مع مستشارينا؟',
+            children: 'هل تواجه تحديات معينة في تربية أطفالك؟',
+            courses: 'هل تبحث عن دورة معينة؟',
+            psychological: 'هل ترغب في معرفة المزيد عن خدماتنا النفسية؟',
+            community: 'هل ترغب في المشاركة في منتدى النقاش؟'
+        };
+
+        return followUps[category] || 'هل هناك شيء آخر يمكنني مساعدتك به؟';
+    }
     // Handle send button click
     chatSend.addEventListener('click', () => {
         const message = chatInput.value.trim();

@@ -9,7 +9,7 @@
         <article>
             <h4>خدمات</h4>
             <ul>
-                <li><a href="#">استشارات زوجية</a></li>
+                <li><a href="consultations.php">استشارات زوجية</a></li>
                 <li><a href="articles.php"> مقالات ودروس تعليمية</a></li>
                 <li><a href="community.php">منتدى النقاش </a></li>
                 <li><a href="courses.php">دورات تدريبية</a></li>

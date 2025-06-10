@@ -886,6 +886,7 @@ section {
     padding: 15px;
     overflow-y: auto;
     background: #f8f9fa;
+    scroll-behavior: smooth;
 }
 
 .chat-input {
@@ -917,6 +918,25 @@ section {
     border-radius: 15px;
     max-width: 80%;
     clear: both;
+    position: relative;
+}
+
+.message a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.bot-message a {
+    position: relative;
+    padding: 2px 4px;
+    background-color: rgba(0, 109, 119, 0.1);
+    border-radius: 4px;
+}
+
+.bot-message a:hover {
+    background-color: rgba(0, 109, 119, 0.2);
 }
 
 .bot-message {
@@ -932,6 +952,43 @@ section {
     float: left;
     border-top-left-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.typing-indicator {
+    padding: 10px;
+    display: flex;
+    gap: 4px;
+    margin-top: auto;
+    clear: both;
+    float: right;
+}
+
+.typing-indicator span {
+    width: 8px;
+    height: 8px;
+    background: #006D77;
+    border-radius: 50%;
+    animation: typing 1s infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 /**
@@ -2139,7 +2196,7 @@ textarea::placeholder {
     padding: 2rem;
     max-width: 1400px;
     margin: 0 auto;
-    width: 80%; 
+    width: 80%;
 }
 
 /* Sidebar Styles */
@@ -2227,7 +2284,7 @@ textarea::placeholder {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    
+
 }
 
 .dashboard table th {
@@ -2402,7 +2459,6 @@ textarea::placeholder {
 }
 
 .dashboard-btn:hover {
-    background: var(--secondary-color);
     transform: translateY(-2px);
 }
 
@@ -3404,7 +3460,8 @@ textarea::placeholder {
         width: 60%;
         direction: rtl;
     }
-    .form-btn{
+
+    .form-btn {
         width: 50%;
         right: -0rem;
         transform: translateX(-50%);
