@@ -34,7 +34,7 @@ if (isset($_SESSION['USER'])) {
     <nav>
         <div class="nav_container">
             <a href="index.php" class="nav_logo">
-                <img src="<?= ROOT ?>/assets/images/nabta-logo.png" alt="Nabta Logo">
+                <img src="<?= ROOT ?>/assets/images/NABTA.png" alt="Nabta Logo">
             </a>
             <button class="mobile-nav-toggle" aria-controls="nav_items" aria-expanded="false">
                 <i class="uil uil-bars"></i>

@@ -7,7 +7,7 @@ $users_query = "SELECT * FROM `users`";
 $users_query_result = mysqli_query($conn, $users_query);
 
 ?>
-<section class="dashboard">
+<section class="dashboard" style="margin-left: 18rem;">
     <div class="mainDash-container dashboard__container">
         <button id="show__sidebar-btn" class="sidebar__toggle"><i class="uil uil-angle-right-b"></i></button>
         <button id="hide__sidebar-btn" class="sidebar__toggle"><i class="uil uil-angle-left-b"></i></button>
@@ -91,16 +91,16 @@ $users_query_result = mysqli_query($conn, $users_query);
                 </thead>
                 <tbody>
                     <?php while ($user = mysqli_fetch_assoc($users_query_result)): ?>
-                        <tr>
+                        <tr> 
                             <td data-label="الحساب الالكتروني"><?= $user['email'] ?></td>
                             <td data-label="اسم المستخدم"><?= $user['first_name'] . ' ' . $user['last_name'] ?></td>
                             <td data-label="دور المستخدم"><?= $user['user_role']  ?></td>
                             <td data-label="تعديل"><a href="#" class="dashboard-btn sm">تعديل </a></td>
                             <td data-label="حظر">
-                                <a href="block-user.php?id=<?= $user['id'] ?>"
+                                <a
                                     class="dashboard-btn sm  warning ?>" 
                                     onclick="confirmBlock(<?= $user['id'] ?>)">
-                                    <?= $user['blocked'] ? 'إلغاء الحظر' : 'حظر' ?>
+                                    <?= $user['blocked'] === "1" ? 'إلغاء الحظر' : 'حظر' ?>
                                 </a>
                             </td>
                             <td data-label="حذف"><a class="dashboard-btn sm danger" onclick="confirmDelete(<?= $user['id'] ?>)">حذف</a></td>

@@ -142,16 +142,14 @@
 </section>
 <div class="chat-widget">
     <div class="chat-button">
-        <i class="fas fa-comments"></i>
+        <i class="fas fa-robot"></i>
     </div>
     <div class="chat-container">
         <div class="chat-header">
             <h3>نبتة - المساعد الآلي</h3>
         </div>
         <div class="chat-messages">
-            <div class="message bot-message">
-                مرحباً بك! كيف يمكنني مساعدتك اليوم؟
-            </div>
+            
         </div>
         <div class="chat-input">
             <input type="text" placeholder="اكتب رسالتك هنا...">

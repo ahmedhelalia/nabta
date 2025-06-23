@@ -4,7 +4,7 @@
 */
 function show($stuff, $exit = true) {
     echo "<pre>";
-    print_r($stuff);
+    var_dump($stuff);
     echo "</pre>";
     if ($exit) {
         exit;
