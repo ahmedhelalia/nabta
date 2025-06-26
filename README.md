@@ -3,12 +3,27 @@
 A web project focused on providing educational and awareness content for teenagers and youth, including videos, articles, and resources.
 
 ## Features
-
 - Media cards with videos and articles about adolescence and youth.
 - Responsive design for various devices.
 - Organized content by topic and stage.
 - Arabic language support.
-- admin dashboard and expert dashboard
+- Community forum for sharing questions and experiences
+- Consultations services
+- Chatbot Widget: Simulated AI assistant for family and marital advice (static, no real AI backend).
+- Admin dashboard and Expert dashboard
+- User profile
+- User Types & Rules
+Our website has 3 types of users with different permissions:
+1. Admin
+  -can do everything (full control)
+  -Manages users & settings
+2. Expert
+  -can use special tools
+  -can create/edit content
+  -cannot change settings or delete users
+3. Normal User
+  -Can view & interact with basic features
+  -Cannot access admin/expert tools
 ## Project Structure
 
 ```
